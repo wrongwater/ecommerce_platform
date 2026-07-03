@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Organic Shop{% endblock %}</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'css/vendor.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    {% block extra_css %}{% endblock %}
+</head>
+
+<body>
+
+    {% include 'includes/preloader.html' %}
+
+    <!-- Kontener owijający całą zawartość strony (początkowo niewidoczny) -->
+    <div id="main-content" style="visibility: hidden; opacity: 0; transition: opacity 0.5s ease;">
+        {% include 'includes/header.html' %}
+
+        <main>
+            {% block content %}
+            {% endblock %}
+        </main>
+
+        {% include 'includes/footer.html' %}
+    </div>
+
+    <!-- JavaScript -->
+    <script src="{% static 'js/jquery-1.11.0.min.js' %}"></script>
+    <script src="{% static 'js/plugins.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+
+    {% block extra_js %}{% endblock %}
+</body>
+</html>
