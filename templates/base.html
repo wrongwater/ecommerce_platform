@@ -19,7 +19,7 @@
 
 <body>
 
-    {% include 'includes/preloader.html' %}
+{#    {% include 'includes/preloader.html' %}#}
 
     <!-- Kontener owijający całą zawartość strony (początkowo niewidoczny) -->
     <div id="main-content" style="visibility: hidden; opacity: 0; transition: opacity 0.5s ease;">
@@ -34,6 +34,7 @@
     </div>
 
     <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="{% static 'js/jquery-1.11.0.min.js' %}"></script>
     <script src="{% static 'js/plugins.js' %}"></script>
     <script src="{% static 'js/script.js' %}"></script>
