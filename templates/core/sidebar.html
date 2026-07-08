@@ -1,0 +1,15 @@
+{% load static %}
+<aside class="persistent-sidebar d-none d-md-block">
+  <div class="p-3">
+    <h5 class="fw-bold">Categories</h5>
+    <ul class="list-unstyled mb-0">
+      {% with cats=site_categories|default:categories %}
+        {% for cat in cats %}
+          <li class="mb-2">
+            <a href="{% url 'core:category_detail' cat.slug %}" class="text-decoration-none">{{ cat.name }}</a>
+          </li>
+        {% endfor %}
+      {% endwith %}
+    </ul>
+  </div>
+</aside>
