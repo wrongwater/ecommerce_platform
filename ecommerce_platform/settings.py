@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # custom apps
     'core',
+    'jazzmin'
 ]
 
 MIDDLEWARE = [
@@ -130,8 +131,14 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
-
+JAZZMIN_SETTINGS = {
+    "site_header": "My Shop",
+    "site_title": "My Shop Admin",
+    "site_brand": "My Shop",
+    "welcome_sign": "Welcome to my shop.",
+    "site_logo": "static/assets/images/logo.png",
+    "copyright": "Maciej's Shop",
+}
 
 
 
