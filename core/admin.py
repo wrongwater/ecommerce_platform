@@ -1,5 +1,9 @@
 from django.contrib import admin
-from .models import Category, Product
+# from django.contrib.auth import get_user_model
+# from django.contrib.auth.admin import UserAdmin
+# from core.models import User, Category, Product
+from core.models import Category, Product
+
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):

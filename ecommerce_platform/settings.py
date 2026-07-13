@@ -33,15 +33,18 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',                  # ← FIRST
+    'userauths',
+    'import_export',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # custom apps
+
     'core',
-    'jazzmin'
 ]
 
 MIDDLEWARE = [
@@ -67,7 +70,6 @@ TEMPLATES = [
                             'django.contrib.auth.context_processors.auth',
                             'django.contrib.messages.context_processors.messages',
                             'core.context_processors.categories',
-                'core.context_processors.categories',
             ],
         },
     },
@@ -136,11 +138,12 @@ JAZZMIN_SETTINGS = {
     "site_title": "My Shop Admin",
     "site_brand": "My Shop",
     "welcome_sign": "Welcome to my shop.",
-    "site_logo": "static/assets/images/logo.png",
-    "copyright": "Maciej's Shop",
+    "site_logo": "staticfiles/organic/images/logo.svg",
+    "site_copyright": "Copyright © 2026 Your Name. All rights reserved.",
 }
 
-
+#AUTH_USER_MODEL = "userauths.User"
+AUTH_USER_MODEL="core.User"
 
 
 

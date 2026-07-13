@@ -1,6 +1,36 @@
 from django.db import models
 from django.utils.text import slugify
 from django.urls import reverse
+from django.contrib.auth.models import AbstractUser
+from django.db import models
+from django.contrib.auth.models import AbstractUser
+
+# class User(models.Model):
+#     email = models.EmailField(max_length=255, unique=True)s
+#     username = models.CharField(max_length=255, unique=True)
+#     title = models.CharField(max_length=255)
+#     desc = models.TextField(blank=True)
+#
+#     USERNAME_FIELD = 'email'
+#     REQUIRED_FIELDS = ['username']
+#
+#     def __str__(self):
+#         return self.usernamed
+
+
+
+
+class User(AbstractUser):
+    email = models.EmailField(max_length=255, unique=True)
+    title = models.CharField(max_length=255, blank=True)
+    bio = models.TextField(blank=True)
+
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['username']
+
+    def __str__(self):
+        return self.username
+
 
 
 class Category(models.Model):
@@ -8,6 +38,7 @@ class Category(models.Model):
     slug = models.SlugField(max_length=200, unique=True, blank=True)
     description = models.TextField(blank=True)
     image = models.ImageField(upload_to='categories/', blank=True, null=True)
+    available = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
