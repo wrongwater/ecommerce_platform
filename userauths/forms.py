@@ -7,4 +7,4 @@ class UserRegisterForm(UserCreationForm):
 
     class Meta:
         model = User
-        fileds = ['username', 'email']
+        fields = ['username', 'email']

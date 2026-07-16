@@ -1,18 +1,23 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from userauths.forms import UserRegisterForm
 
-def reigster_view(request):
-    form = UserRegisterForm(request.POST)
 
-    context = {'form': form}
+def register_view(request):
+    if request.method == "POST":
+        form = UserRegisterForm(request.POST)
+
+        if form.is_valid():
+            form.save()
+            return redirect("userauths:sign-up")
+    else:
+        form = UserRegisterForm()
+
+    return render(
+        request,
+        "userauths/sign-up.html",
+        {"form": form},
+    )
 
 def register_view(request):
     return render(request, "userauths/sign-up.html", context)
 
-
-
-
-# from django.http import HttpResponse
-#
-# def register_view(request):
-#     return HttpResponse("Register page")
