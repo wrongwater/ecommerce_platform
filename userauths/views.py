@@ -17,7 +17,3 @@ def register_view(request):
         "userauths/sign-up.html",
         {"form": form},
     )
-
-def register_view(request):
-    return render(request, "userauths/sign-up.html", context)
-
