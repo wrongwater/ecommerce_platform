@@ -5,11 +5,31 @@
 {#    <input type="password" placeholder="confirm password">#}
 {#</form>#}
 
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Sign up</button>
-</form>
-
+{#<form method="post">#}
+{#    {% csrf_token %}#}
+{#    {{ form.as_p }}#}
+{#    <button type="submit">Sign up</button>#}
+{#</form>#}
+{##}
 {#bezużyteczne potwierdzenie zadziałanaia templatu#}
-<textarea name="" id="" cols="30" rows="10"></textarea>
+{#<textarea name="" id="" cols="30" rows="10"></textarea>#}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create account</title>
+</head>
+<body>
+
+    <h1>Create account</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit">Register</button>
+    </form>
+
+</body>
+</html>
